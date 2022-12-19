@@ -32,7 +32,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultProduct = await axios.get(`/api/products/${id}`);
+      const resultProduct = await axios.get(`/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)
     };
@@ -118,8 +118,8 @@ const ProductDetails = () => {
                       {
                         product.sizes?.map((size) => (
                           <>
-                            <input type='radio' id={size.title} onClick={(e) => setSize(e.target.value)} key={size._id} name='size' value={size.title} required />
-                            <label htmlFor={size.title}>{size.title}</label>
+                            <input type='radio' id={size.value} onClick={(e) => setSize(e.target.value)} key={size._id} name='size' value={size.value} required />
+                            <label htmlFor={size.value}>{size.value}</label>
                           </>
                         ))
                         }
@@ -131,8 +131,8 @@ const ProductDetails = () => {
                     {
                         product.colors?.map((color) => (
                           <>
-                            <input type='radio' onClick={(e) => setColor(e.target.value)} id={color.title} key={color._id} name='color' value={ color.title} required />
-                            <label htmlFor={color.title}>{color.title}</label>
+                            <input type='radio' onClick={(e) => setColor(e.target.value)} id={color.value} key={color._id} name='color' value={color.value} required />
+                            <label htmlFor={color.value}>{color.value}</label>
                           </>
                         ))
                     }

@@ -115,11 +115,11 @@ const ShopMainPart = () => {
     <>
     <div className='hidden sm:block s-container mr-2'>
       <div className='s-row'>
-        <h2 className='s-title text-4xl'>SHOP</h2>
+        <h2 className='s-title text-4xl tracking-widest'>SHOP</h2>
       </div>
       <div className='s-row'>
         <div className='s-col'>
-          <h3 className="s-filters">FILTERS</h3>
+          <h3 className="s-filters tracking-widest">FILTERS</h3>
           <div className='f-groupTitle'>
               <span className='f-groupTitle'>SEARCH</span>
               <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />

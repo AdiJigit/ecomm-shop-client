@@ -45,7 +45,7 @@ const Singin = () => {
       <div className='f-row'>
         <div className='f-formGroups'>
           <form onSubmit={loginHandler}>
-            <h2 className='f-title'>LOGIN</h2>
+            <h2 className='f-title tracking-widest'>LOGIN</h2>
             <div className='f-formGroup'>
               <label htmlFor='email' className='f-label'>EMAIL</label>
               <input type='email' onChange={(e) => setEmail(e.target.value)} id='email' className='f-input' required />

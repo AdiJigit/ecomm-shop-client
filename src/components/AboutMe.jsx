@@ -7,7 +7,6 @@ const AboutMe = () => {
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null;
 
-
   return (
     <div className='am-container'>
       <div className='am-row'>

@@ -59,7 +59,7 @@ const ChangePassword = () => {
         <div className="f-row">
           <div className="f-formGroups">
             <form onSubmit={updateHandler}>
-              <h2 className="f-title">Change Password</h2>
+              <h2 className="f-title tracking-widest">Change Password</h2>
               <div className="f-formGroup">
                 <label htmlFor="o_password" className="f-label">
                   OLD PASSWORD

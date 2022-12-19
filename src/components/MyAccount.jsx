@@ -10,7 +10,7 @@ const MyAccount = () => {
     <>
       <div className='my-container mx-4'>
         <div className='my-row'>
-          <h2 className='s-title'>MY ACCOUNT</h2>
+          <h2 className='s-title tracking-widest'>My Account</h2>
         </div>
         <div className='my-row'>
         <Tabs>

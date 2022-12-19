@@ -129,26 +129,9 @@
 .f-formOther{
   text-align: center;
   font-size: 12px;
+  font-weight: 600;
   color: #000;
   position: relative;
-}
-
-.f-formOther a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  right: 0;
-  background-color: black;
-  transform-origin: bottom right;
-  transition: transform 0.5s cubic-bezier(0, 0, 0.44, 1.1);
-}
-
-.f-formOther a:hover::after{
-  transform: scaleX(1);
-  transform-origin: bottom left;
 }
 
 .s-title {
@@ -192,16 +175,17 @@
 }
 
 .f-button{
-  background-color: #000;
-  color: #fff;
+  background-color: rgb(228, 231, 208);
+  color: #000;
   border: none;
+  border-radius: 5px;
   padding: 5px 15px;
   transition: all 0.5s;
 }
 
 .f-button:hover{
-  background-color: #ccc;
-  color: #000;
+  background-color: #3B1F97;
+  color: #fff;
 }
 
 .f-filterInput{
@@ -241,7 +225,9 @@
 }
 
 .f-button-star:hover{
-  background-color: #ccc;
+  background-color: #3B1F97;
+  color: #fff;
+  transition: all 0.5s;
 }
 
 .rc-slider-handle{
@@ -665,23 +651,24 @@
   font-weight: bold;
   margin-top: 40px;
 }
-
 .filter-pagination{
   margin-top: 50px;
+  margin-bottom: 10px;
   display: flex;
+  gap: 10px;
   justify-content: center;
-  text-transform: uppercase;
 }
 
 .filter-pagination li{
-  padding: 5px 15px;
+  padding: 3px 10px;
   cursor: pointer;
-  border: 1px solid #111111;
+  border: none;
   transition: all 0.5s;
 }
 
 .filter-pagination li:hover{
-  background-color: #000;
+  background-color: #3B1F97;
+  border-radius: 5px;
 }
 
 .filter-pagination li:hover a {
@@ -689,13 +676,13 @@
 }
 
 .page-active{
-  background-color: #000;
+  background-color: #ccc;
+  border-radius: 5px;
 }
 
 .page-active-link{
-  color: #fff;
+  color: #000;
 }
-
 .e-title{
   text-align: center;
   margin-top: 60px;

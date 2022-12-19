@@ -37,7 +37,7 @@ const BlogLists = () => {
     <>
       <div id="blog" className="hidden sm:block hb-container">
         <div className="hb-row">
-          <h2 className="f-title">Our Blog</h2>
+          <h2 className="f-title tracking-widest">Our Blog</h2>
         </div>
         <div className="nb-row">
           <div className="nb-col">
@@ -77,7 +77,7 @@ const BlogLists = () => {
       {/* MOBILE STYLE */}
       <div id="blog" className="sm:hidden ">
         <div className="">
-          <h2 className="">Our Blog</h2>
+          <h2 className="text-center">Our Blog</h2>
         </div>
         <div className="">
           <div className="">
