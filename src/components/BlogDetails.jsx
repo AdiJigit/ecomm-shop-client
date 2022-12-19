@@ -14,11 +14,12 @@ const BlogDetails = () => {
   const id = location.pathname.split('/')[2]
   console.log(id)
 
-  const url = 'https://jigit.adaptable.app'
+
 
   useEffect(() => {
 
     const fetchData = async () => {
+      const url = 'https://jigit.adaptable.app'
       const resultBlog = await axios.get(url + `/api/blogs/find/${id}`);
       console.log(resultBlog.data);
       setBlog(resultBlog.data)

@@ -6,7 +6,6 @@ import ReactPaginate from 'react-paginate';
 
 const ShopProducts = ({list}) => {
 
-  const url = 'https://jigit.adaptable.app'
 
   const [products, setProducts] = useState([]);
 
@@ -23,6 +22,8 @@ const ShopProducts = ({list}) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const url = 'https://jigit.adaptable.app'
+
       const resultProducts = await axios.get(url + "/api/products/all");
 
 

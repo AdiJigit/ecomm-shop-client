@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
 
-  const url = 'https://jigit.adaptable.app'
+
 
   const navigate = useNavigate()
 
@@ -34,6 +34,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
+      const url = 'https://jigit.adaptable.app'
       const resultProduct = await axios.get(url + `/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)

@@ -7,8 +7,6 @@ import ShopProducts from './ShopProducts'
 
 const ShopMainPart = () => {
 
-  const url = 'https://jigit.adaptable.app'
-
   const [products, setProducts] = useState([]) //default is empty, no products
   const [category, setCategory] = useState([]);//default is empty, no categories
   const [rating, setRating] = useState([])//default is empty, no ratings
@@ -79,6 +77,7 @@ const ShopMainPart = () => {
 
     //fetch all product from db
     const fetchData = async() => {
+      const url = 'https://jigit.adaptable.app'
       const resultProducts = await axios.get(url + '/api/products/all')
 
       const resultProductsData = resultProducts.data

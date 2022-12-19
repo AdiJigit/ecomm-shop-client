@@ -5,7 +5,6 @@ import ReactPaginate from 'react-paginate';
 
 const BlogLists = () => {
 
-  const url = 'https://jigit.adaptable.app'
 
   const [blogs, setBlogs] = useState([]);
 
@@ -22,6 +21,8 @@ const BlogLists = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const url = 'https://jigit.adaptable.app'
+
       const resultBlog = await axios.get(url + "/api/blogs/all");
       //showing the latest blogs
 

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 
 const MyOrders = () => {
 
-  const url = 'https://jigit.adaptable.app'
-
   const userInfo = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null;
@@ -18,6 +16,8 @@ const MyOrders = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const url = 'https://jigit.adaptable.app'
+
       const resultOrders = await axios.get(url + `/api/orders/mine/${userId}`);
       const resultOrdersData = resultOrders.data;
       const sortResultOrdersData = resultOrdersData.sort((a, b) => b.createdAt.localeCompare(a.createdAt))

@@ -5,7 +5,6 @@ import { toast } from 'react-toastify'
 import MyOrderDetails from './MyOrderDetails'
 
 const MyOrder = () => {
-  const url = 'https://jigit.adaptable.app'
 
   const [order, setOrder] = useState([])
 
@@ -18,6 +17,7 @@ const MyOrder = () => {
 
   const fetchData = async() => {
     try{
+      const url = 'https://jigit.adaptable.app'
 
       const {data} = await axios.get(url + `/api/orders/find/${id}`);
       console.log(data);

@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 const SignUp = () => {
 
-  const url = 'https://jigit.adaptable.app'
 
   const navigate = useNavigate();
 
@@ -25,6 +24,8 @@ const SignUp = () => {
     }
 
     try {
+      const url = 'https://jigit.adaptable.app'
+
       const {data} = await axios.post(url + "/api/users/register", {
         username,
         email,

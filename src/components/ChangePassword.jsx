@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
 
-  const url = 'https://jigit.adaptable.app'
 
   const navigate = useNavigate()
 
@@ -37,6 +36,8 @@ const ChangePassword = () => {
       //if new password === retype new password
       if (newPassword === rNewPassword) {
         try {
+          const url = 'https://jigit.adaptable.app'
+
           const {data} = await axios.put(url + "/api/users/update", {
             _id: userInfo._id,
             newPassword,
