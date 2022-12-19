@@ -16,7 +16,7 @@ const Singin = () => {
 
     try{
 
-      const {data} = await axios.post('/api/users/login', {
+      const {data} = await axios.post(process.env.URI + '/api/users/login', {
         email,
         password
       })

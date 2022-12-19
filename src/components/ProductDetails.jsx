@@ -32,7 +32,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultProduct = await axios.get(`/api/products/find/${id}`);
+      const resultProduct = await axios.get(process.env.URI + `/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)
     };

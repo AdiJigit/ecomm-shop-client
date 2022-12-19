@@ -24,7 +24,7 @@ const Checkout = ({ setOpen, cartItems, taxPrice, totalPrice, subTotal }) => {
     e.preventDefault()
     try{
 
-      const {data} = await axios.post('/api/orders', {
+      const {data} = await axios.post(process.env.URI + '/api/orders', {
 
         orderItems: cartItems,
         userId: userId,

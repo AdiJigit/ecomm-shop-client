@@ -22,7 +22,7 @@ const SignUp = () => {
     }
 
     try {
-      const {data} = await axios.post("/api/users/register", {
+      const {data} = await axios.post(process.env.URI + "/api/users/register", {
         username,
         email,
         password

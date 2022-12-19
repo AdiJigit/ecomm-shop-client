@@ -18,7 +18,7 @@ const MyOrder = () => {
   const fetchData = async() => {
     try{
 
-      const {data} = await axios.get(`/api/orders/find/${id}`);
+      const {data} = await axios.get(process.env.URI + `/api/orders/find/${id}`);
       console.log(data);
       setOrder(data)
 

@@ -19,7 +19,7 @@ const BlogLists = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resultBlog = await axios.get("/api/blogs/all");
+      const resultBlog = await axios.get(process.env.URI + "/api/blogs/all");
       //showing the latest blogs
 
       const resultBlogData = resultBlog.data;

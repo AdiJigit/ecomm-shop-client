@@ -77,7 +77,7 @@ const ShopMainPart = () => {
 
     //fetch all product from db
     const fetchData = async() => {
-      const resultProducts = await axios.get('/api/products/all')
+      const resultProducts = await axios.get(process.env.URI + '/api/products/all')
 
       const resultProductsData = resultProducts.data
 
@@ -89,18 +89,18 @@ const ShopMainPart = () => {
       setProducts(sortResultProductsData)
 
       //fetch all Category
-      const resultCategory = await axios('api/category/all');
+      const resultCategory = await axios(process.env.URI + 'api/category/all');
       // console.log(resultCategory.data)
       setCategory(resultCategory.data)
 
 
       //fetch all Rating
-      const resultRating = await axios('api/rating/all');
+      const resultRating = await axios(process.env.URI + 'api/rating/all');
       // console.log(resultRating.data)
       setRating(resultRating.data)
 
       //fetch all Subcategories
-      const resultSubcategory = await axios.get("/api/subcategory/all");
+      const resultSubcategory = await axios.get(process.env.URI + "/api/subcategory/all");
       // console.log(resultSubcategory.data)
       setSubCategory(resultSubcategory.data);
 

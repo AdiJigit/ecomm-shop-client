@@ -21,7 +21,7 @@ const ShopProducts = ({list}) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resultProducts = await axios.get("/api/products/all");
+      const resultProducts = await axios.get(process.env.URI + "/api/products/all");
 
 
       const resultProductsData = resultProducts.data;

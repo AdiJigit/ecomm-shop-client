@@ -17,7 +17,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resultOrders = await axios.get(`/api/orders/mine/${userId}`);
+      const resultOrders = await axios.get(process.env.URI + `/api/orders/mine/${userId}`);
       const resultOrdersData = resultOrders.data;
       const sortResultOrdersData = resultOrdersData.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
       setOrders(sortResultOrdersData);
