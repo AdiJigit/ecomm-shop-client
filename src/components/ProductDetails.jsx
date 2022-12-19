@@ -12,6 +12,8 @@ import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const navigate = useNavigate()
 
   const {state, dispatch: ctxDispatch} = useContext(Store)
@@ -32,7 +34,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultProduct = await axios.get(process.env.URI + `/api/products/find/${id}`);
+      const resultProduct = await axios.get(url + `/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)
     };

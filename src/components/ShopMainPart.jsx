@@ -7,6 +7,8 @@ import ShopProducts from './ShopProducts'
 
 const ShopMainPart = () => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const [products, setProducts] = useState([]) //default is empty, no products
   const [category, setCategory] = useState([]);//default is empty, no categories
   const [rating, setRating] = useState([])//default is empty, no ratings
@@ -77,7 +79,7 @@ const ShopMainPart = () => {
 
     //fetch all product from db
     const fetchData = async() => {
-      const resultProducts = await axios.get(process.env.URI + '/api/products/all')
+      const resultProducts = await axios.get(url + '/api/products/all')
 
       const resultProductsData = resultProducts.data
 
@@ -89,18 +91,18 @@ const ShopMainPart = () => {
       setProducts(sortResultProductsData)
 
       //fetch all Category
-      const resultCategory = await axios(process.env.URI + 'api/category/all');
+      const resultCategory = await axios(url + 'api/category/all');
       // console.log(resultCategory.data)
       setCategory(resultCategory.data)
 
 
       //fetch all Rating
-      const resultRating = await axios(process.env.URI + 'api/rating/all');
+      const resultRating = await axios(url + 'api/rating/all');
       // console.log(resultRating.data)
       setRating(resultRating.data)
 
       //fetch all Subcategories
-      const resultSubcategory = await axios.get(process.env.URI + "/api/subcategory/all");
+      const resultSubcategory = await axios.get(url + "/api/subcategory/all");
       // console.log(resultSubcategory.data)
       setSubCategory(resultSubcategory.data);
 

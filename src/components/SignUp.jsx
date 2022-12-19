@@ -5,6 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
+
+  const url = 'https://adijigit.adaptable.app'
+
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -22,7 +25,7 @@ const SignUp = () => {
     }
 
     try {
-      const {data} = await axios.post(process.env.URI + "/api/users/register", {
+      const {data} = await axios.post(url + "/api/users/register", {
         username,
         email,
         password

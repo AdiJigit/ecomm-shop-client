@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const navigate = useNavigate()
 
   const userInfo = localStorage.getItem("userInfo")
@@ -35,7 +37,7 @@ const ChangePassword = () => {
       //if new password === retype new password
       if (newPassword === rNewPassword) {
         try {
-          const {data} = await axios.put(process.env.URI + "/api/users/update", {
+          const {data} = await axios.put(url + "/api/users/update", {
             _id: userInfo._id,
             newPassword,
           });

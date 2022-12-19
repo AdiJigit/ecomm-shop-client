@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 
 const Checkout = ({ setOpen, cartItems, taxPrice, totalPrice, subTotal }) => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const navigate= useNavigate()
 
   const userInfo = localStorage.getItem("userInfo")
@@ -24,7 +26,7 @@ const Checkout = ({ setOpen, cartItems, taxPrice, totalPrice, subTotal }) => {
     e.preventDefault()
     try{
 
-      const {data} = await axios.post(process.env.URI + '/api/orders', {
+      const {data} = await axios.post(url + '/api/orders', {
 
         orderItems: cartItems,
         userId: userId,

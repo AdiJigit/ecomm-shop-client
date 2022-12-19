@@ -14,10 +14,12 @@ const BlogDetails = () => {
   const id = location.pathname.split('/')[2]
   console.log(id)
 
+  const url = 'https://adijigit.adaptable.app'
+
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultBlog = await axios.get(process.env.URI + `/api/blogs/find/${id}`);
+      const resultBlog = await axios.get(url + `/api/blogs/find/${id}`);
       console.log(resultBlog.data);
       setBlog(resultBlog.data)
     };

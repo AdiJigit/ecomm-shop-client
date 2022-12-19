@@ -6,6 +6,8 @@ import ReactPaginate from 'react-paginate';
 
 const ShopProducts = ({list}) => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const [products, setProducts] = useState([]);
 
   //for pagination
@@ -21,7 +23,7 @@ const ShopProducts = ({list}) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resultProducts = await axios.get(process.env.URI + "/api/products/all");
+      const resultProducts = await axios.get(url + "/api/products/all");
 
 
       const resultProductsData = resultProducts.data;

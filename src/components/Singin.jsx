@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 
 const Singin = () => {
 
+  const url = 'https://adijigit.adaptable.app'
+
   const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
@@ -16,7 +18,7 @@ const Singin = () => {
 
     try{
 
-      const {data} = await axios.post(process.env.URI + '/api/users/login', {
+      const {data} = await axios.post(url + '/api/users/login', {
         email,
         password
       })

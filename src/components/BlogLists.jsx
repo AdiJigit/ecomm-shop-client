@@ -4,6 +4,9 @@ import BlogListItems from "./BlogListItems";
 import ReactPaginate from 'react-paginate';
 
 const BlogLists = () => {
+
+  const url = 'https://adijigit.adaptable.app'
+
   const [blogs, setBlogs] = useState([]);
 
   //for pagination
@@ -19,7 +22,7 @@ const BlogLists = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resultBlog = await axios.get(process.env.URI + "/api/blogs/all");
+      const resultBlog = await axios.get(url + "/api/blogs/all");
       //showing the latest blogs
 
       const resultBlogData = resultBlog.data;

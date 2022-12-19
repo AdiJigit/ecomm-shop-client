@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import MyOrderDetails from './MyOrderDetails'
 
 const MyOrder = () => {
+  const url = 'https://adijigit.adaptable.app'
 
   const [order, setOrder] = useState([])
 
@@ -18,7 +19,7 @@ const MyOrder = () => {
   const fetchData = async() => {
     try{
 
-      const {data} = await axios.get(process.env.URI + `/api/orders/find/${id}`);
+      const {data} = await axios.get(url + `/api/orders/find/${id}`);
       console.log(data);
       setOrder(data)
 
