@@ -6,7 +6,7 @@ import ReactPaginate from 'react-paginate';
 
 const ShopProducts = ({list}) => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const [products, setProducts] = useState([]);
 

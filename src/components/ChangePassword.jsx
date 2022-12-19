@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const navigate = useNavigate()
 

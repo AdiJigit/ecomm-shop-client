@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import MyOrderDetails from './MyOrderDetails'
 
 const MyOrder = () => {
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const [order, setOrder] = useState([])
 

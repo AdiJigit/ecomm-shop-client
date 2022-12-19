@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 
 const BlogLists = () => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const [blogs, setBlogs] = useState([]);
 

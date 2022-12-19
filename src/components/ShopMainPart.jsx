@@ -7,7 +7,7 @@ import ShopProducts from './ShopProducts'
 
 const ShopMainPart = () => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const [products, setProducts] = useState([]) //default is empty, no products
   const [category, setCategory] = useState([]);//default is empty, no categories

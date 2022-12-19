@@ -14,7 +14,7 @@ const BlogDetails = () => {
   const id = location.pathname.split('/')[2]
   console.log(id)
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   useEffect(() => {
 

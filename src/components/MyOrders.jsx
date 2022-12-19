@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const MyOrders = () => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const userInfo = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))

@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
 
-  const url = 'https://adijigit.adaptable.app'
+  const url = 'https://jigit.adaptable.app'
 
   const navigate = useNavigate()
 
