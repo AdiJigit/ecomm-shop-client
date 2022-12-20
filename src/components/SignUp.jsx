@@ -25,7 +25,7 @@ const SignUp = () => {
 
     try {
 
-      const {data} = await axios.post('https://jigit-api/onrender.com' + "/api/users/register", {
+      const {data} = await axios.post(process.env.SERVER_URI + "/api/users/register", {
         username,
         email,
         password
