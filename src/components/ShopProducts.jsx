@@ -23,7 +23,7 @@ const ShopProducts = ({list}) => {
   useEffect(() => {
     const fetchData = async () => {
 
-      const resultProducts = await axios.get(process.env.SERVER_URI + "/api/products/all");
+      const resultProducts = await axios.get("https://jigit-api.onrender.com/api/products/all");
 
 
       const resultProductsData = resultProducts.data;

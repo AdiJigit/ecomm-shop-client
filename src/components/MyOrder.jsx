@@ -18,7 +18,7 @@ const MyOrder = () => {
   const fetchData = async() => {
     try{
 
-      const {data} = await axios.get(process.env.SERVER_URI + `/api/orders/find/${id}`);
+      const {data} = await axios.get(`https://jigit-api.onrender.com/api/orders/find/${id}`);
       console.log(data);
       setOrder(data)
 
