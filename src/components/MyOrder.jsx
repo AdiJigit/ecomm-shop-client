@@ -17,7 +17,7 @@ const MyOrder = () => {
 
   const fetchData = async() => {
     try{
-      const url = 'https://jigit.adaptable.app/'
+      const url = 'https://jigit.adaptable.app'
 
       const {data} = await axios.get(url + `/api/orders/find/${id}`);
       console.log(data);

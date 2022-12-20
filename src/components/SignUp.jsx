@@ -24,7 +24,7 @@ const SignUp = () => {
     }
 
     try {
-      const url = 'https://jigit.adaptable.app/'
+      const url = 'https://jigit.adaptable.app'
 
       const {data} = await axios.post(url + "/api/users/register", {
         username,
