@@ -89,18 +89,18 @@ const ShopMainPart = () => {
       setProducts(sortResultProductsData)
 
       //fetch all Category
-      const resultCategory = await axios(process.env.SERVER_URI + 'api/category/all');
+      const resultCategory = await axios('https://jigit-api/onrender.com' + 'api/category/all');
       // console.log(resultCategory.data)
       setCategory(resultCategory.data)
 
 
       //fetch all Rating
-      const resultRating = await axios(process.env.SERVER_URI + 'api/rating/all');
+      const resultRating = await axios('https://jigit-api/onrender.com' + 'api/rating/all');
       // console.log(resultRating.data)
       setRating(resultRating.data)
 
       //fetch all Subcategories
-      const resultSubcategory = await axios.get(process.env.SERVER_URI + "/api/subcategory/all");
+      const resultSubcategory = await axios.get('https://jigit-api/onrender.com' + "/api/subcategory/all");
       // console.log(resultSubcategory.data)
       setSubCategory(resultSubcategory.data);
 

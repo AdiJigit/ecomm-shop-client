@@ -34,7 +34,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultProduct = await axios.get(process.env.SERVER_URI + `/api/products/find/${id}`);
+      const resultProduct = await axios.get('https://jigit-api/onrender.com' + `/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)
     };
