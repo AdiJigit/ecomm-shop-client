@@ -21,9 +21,8 @@ const BlogLists = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://jigit.adaptable.app'
 
-      const resultBlog = await axios.get(url + "/api/blogs/all");
+      const resultBlog = await axios.get(process.env.SERVER_URI + "/api/blogs/all");
       //showing the latest blogs
 
       const resultBlogData = resultBlog.data;

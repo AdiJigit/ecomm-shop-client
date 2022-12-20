@@ -77,8 +77,7 @@ const ShopMainPart = () => {
 
     //fetch all product from db
     const fetchData = async() => {
-      const url = 'https://jigit.adaptable.app'
-      const resultProducts = await axios.get(url + '/api/products/all')
+      const resultProducts = await axios.get(process.env.SERVER_URI + '/api/products/all')
 
       const resultProductsData = resultProducts.data
 
@@ -90,18 +89,18 @@ const ShopMainPart = () => {
       setProducts(sortResultProductsData)
 
       //fetch all Category
-      const resultCategory = await axios(url + 'api/category/all');
+      const resultCategory = await axios(process.env.SERVER_URI + 'api/category/all');
       // console.log(resultCategory.data)
       setCategory(resultCategory.data)
 
 
       //fetch all Rating
-      const resultRating = await axios(url + 'api/rating/all');
+      const resultRating = await axios(process.env.SERVER_URI + 'api/rating/all');
       // console.log(resultRating.data)
       setRating(resultRating.data)
 
       //fetch all Subcategories
-      const resultSubcategory = await axios.get(url + "/api/subcategory/all");
+      const resultSubcategory = await axios.get(process.env.SERVER_URI + "/api/subcategory/all");
       // console.log(resultSubcategory.data)
       setSubCategory(resultSubcategory.data);
 

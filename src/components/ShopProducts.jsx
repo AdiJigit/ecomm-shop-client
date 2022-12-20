@@ -22,9 +22,8 @@ const ShopProducts = ({list}) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://jigit.adaptable.app'
 
-      const resultProducts = await axios.get(url + "/api/products/all");
+      const resultProducts = await axios.get(process.env.SERVER_URI + "/api/products/all");
 
 
       const resultProductsData = resultProducts.data;

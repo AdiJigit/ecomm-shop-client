@@ -16,9 +16,8 @@ const MyOrders = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://jigit.adaptable.app'
 
-      const resultOrders = await axios.get(url + `/api/orders/mine/${userId}`);
+      const resultOrders = await axios.get(process.env.SERVER_URI + `/api/orders/mine/${userId}`);
       const resultOrdersData = resultOrders.data;
       const sortResultOrdersData = resultOrdersData.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
       setOrders(sortResultOrdersData);

@@ -34,8 +34,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const url = 'https://jigit.adaptable.app'
-      const resultProduct = await axios.get(url + `/api/products/find/${id}`);
+      const resultProduct = await axios.get(process.env.SERVER_URI + `/api/products/find/${id}`);
       console.log(resultProduct.data);
       setProduct(resultProduct.data)
     };

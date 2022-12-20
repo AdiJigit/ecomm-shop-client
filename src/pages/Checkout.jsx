@@ -24,9 +24,8 @@ const Checkout = ({ setOpen, cartItems, taxPrice, totalPrice, subTotal }) => {
   const orderProductHandler = async(e) => {
     e.preventDefault()
     try{
-      const url = 'https://jigit.adaptable.app'
 
-      const {data} = await axios.post(url + '/api/orders', {
+      const {data} = await axios.post(process.env.SERVER_URI + '/api/orders', {
 
         orderItems: cartItems,
         userId: userId,
