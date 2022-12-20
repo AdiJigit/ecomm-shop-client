@@ -16,7 +16,7 @@ const Singin = () => {
     e.preventDefault()
 
     try{
-      const url = 'https://adijigit.adaptable.app'
+      const url = 'https://adijigit.adaptable.app/'
 
       const {data} = await axios.post(url + '/api/users/login', {
         email,
