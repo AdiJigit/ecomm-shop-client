@@ -17,7 +17,7 @@ const Singin = () => {
 
     try{
 
-      const {data} = await axios.post('https://jigit-api.onrender.com/api/users/login', {
+      const {data} = await axios.post('/api/users/login', {
         email,
         password
       })

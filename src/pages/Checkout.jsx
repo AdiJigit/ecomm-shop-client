@@ -25,7 +25,7 @@ const Checkout = ({ setOpen, cartItems, taxPrice, totalPrice, subTotal }) => {
     e.preventDefault()
     try{
 
-      const {data} = await axios.post('https://jigit-api.onrender.com/api/orders', {
+      const {data} = await axios.post('/api/orders', {
 
         orderItems: cartItems,
         userId: userId,

@@ -22,7 +22,7 @@ const BlogLists = () => {
   useEffect(() => {
     const fetchData = async () => {
 
-      const resultBlog = await axios.get("https://jigit-api.onrender.com/api/blogs/all");
+      const resultBlog = await axios.get("/api/blogs/all");
       //showing the latest blogs
 
       const resultBlogData = resultBlog.data;

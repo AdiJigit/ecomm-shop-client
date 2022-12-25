@@ -1,18 +1,16 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
-
-
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rPassword, setRPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rPassword, setRPassword] = useState('');
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -24,28 +22,26 @@ const SignUp = () => {
     }
 
     try {
-
-      const {data} = await axios.post("https://jigit-api.onrender.com/api/users/register", {
+      const { data } = await axios.post('/api/users/register', {
         username,
         email,
-        password
+        password,
       });
 
-      toast.success("You have successfully registered!");
-      navigate("/login");
-
+      toast.success('You have successfully registered!');
+      navigate('/login');
     } catch (error) {
-      toast.error("Registration failed, please try again!");
+      toast.error('Registration failed, please try again!');
     }
   };
 
-    useEffect(() => {
-      //check for if exists user then redirect from login to home page
-      if (localStorage.getItem("userInfo")) {
-        localStorage.getItem("userInfo");
-        navigate("/");
-      }
-    }, [navigate]);
+  useEffect(() => {
+    //check for if exists user then redirect from login to home page
+    if (localStorage.getItem('userInfo')) {
+      localStorage.getItem('userInfo');
+      navigate('/');
+    }
+  }, [navigate]);
 
   return (
     <>
