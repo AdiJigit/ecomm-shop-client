@@ -1,33 +1,33 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import BlogListItems from "./BlogListItems";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import BlogListItems from './BlogListItems';
 import ReactPaginate from 'react-paginate';
+import { URL } from '../App';
 
 const BlogLists = () => {
-
-
   const [blogs, setBlogs] = useState([]);
 
   //for pagination
-  const [pageNumber, setPageNumber] = useState(0)
-  const blogsPerPage = 6
-  const pagesVisited = pageNumber * blogsPerPage
+  const [pageNumber, setPageNumber] = useState(0);
+  const blogsPerPage = 6;
+  const pagesVisited = pageNumber * blogsPerPage;
 
-  const pageCount = Math.ceil(blogs.length / blogsPerPage)
+  const pageCount = Math.ceil(blogs.length / blogsPerPage);
 
-  const handlePageClick = ({selected}) => {
-    setPageNumber(selected)
-  }
+  const handlePageClick = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
-
-      const resultBlog = await axios.get("/api/blogs/all");
+      const resultBlog = await axios.get(`${URL}/api/blogs/all`);
       //showing the latest blogs
 
       const resultBlogData = resultBlog.data;
 
-      const sortResultBlogData = resultBlogData.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+      const sortResultBlogData = resultBlogData.sort((a, b) =>
+        b.createdAt.localeCompare(a.createdAt)
+      );
 
       console.log(sortResultBlogData);
       setBlogs(sortResultBlogData);
@@ -51,10 +51,12 @@ const BlogLists = () => {
                 <>
                   <div className="hb-blogs">
                     {
-                    //only 7 lates
-                    blogs.slice(pagesVisited, pagesVisited + blogsPerPage).map((blog) => (
-                      <BlogListItems key={blog._id} blog={blog} />
-                    ))
+                      //only 7 lates
+                      blogs
+                        .slice(pagesVisited, pagesVisited + blogsPerPage)
+                        .map((blog) => (
+                          <BlogListItems key={blog._id} blog={blog} />
+                        ))
                     }
                   </div>
                   <ReactPaginate
@@ -66,12 +68,11 @@ const BlogLists = () => {
                     pageCount={pageCount}
                     previousLabel="prev"
                     renderOnZeroPageCount={null}
-                    activeClassName={"page-active"}
-                    activeLinkClassName={"page-active-link"}
-                      />
+                    activeClassName={'page-active'}
+                    activeLinkClassName={'page-active-link'}
+                  />
                 </>
-              )
-              }
+              )}
             </div>
           </div>
         </div>
@@ -89,30 +90,31 @@ const BlogLists = () => {
                 {blogs.length === 0 ? (
                   <h3 className="no-data">There are currently no blogs!</h3>
                 ) : (
-                    <>
-                      <div className="hb-blogs">
-                        {
+                  <>
+                    <div className="hb-blogs">
+                      {
                         //only 7 lates
-                        blogs.slice(pagesVisited, pagesVisited + blogsPerPage).map((blog) => (
-                          <BlogListItems key={blog._id} blog={blog} />
-                        ))
-                        }
-                      </div>
-                      <ReactPaginate
-                        className="filter-pagination"
-                        breakLabel="..."
-                        nextLabel="next"
-                        onPageChange={handlePageClick}
-                        pageRangeDisplayed={5}
-                        pageCount={pageCount}
-                        previousLabel="prev"
-                        renderOnZeroPageCount={null}
-                        activeClassName={"page-active"}
-                        activeLinkClassName={"page-active-link"}
-                      />
-                      </>
-                    )
-                }
+                        blogs
+                          .slice(pagesVisited, pagesVisited + blogsPerPage)
+                          .map((blog) => (
+                            <BlogListItems key={blog._id} blog={blog} />
+                          ))
+                      }
+                    </div>
+                    <ReactPaginate
+                      className="filter-pagination"
+                      breakLabel="..."
+                      nextLabel="next"
+                      onPageChange={handlePageClick}
+                      pageRangeDisplayed={5}
+                      pageCount={pageCount}
+                      previousLabel="prev"
+                      renderOnZeroPageCount={null}
+                      activeClassName={'page-active'}
+                      activeLinkClassName={'page-active-link'}
+                    />
+                  </>
+                )}
               </div>
             </div>
           </div>

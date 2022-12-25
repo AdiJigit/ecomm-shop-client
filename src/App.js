@@ -15,6 +15,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Order from './pages/Order';
 
+export const URL = process.env.REACT_APP_URL
+
 function App() {
   return (
     <>

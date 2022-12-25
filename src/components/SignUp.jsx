@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { URL } from '../App';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const SignUp = () => {
     }
 
     try {
-      const { data } = await axios.post('/api/users/register', {
+      const { data } = await axios.post(`${URL}/api/users/register`, {
         username,
         email,
         password,

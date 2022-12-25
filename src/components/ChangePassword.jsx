@@ -1,59 +1,57 @@
-import React, { useState} from "react";
-import axios from 'axios'
-import { toast } from 'react-toastify'
-import bcrypt from 'bcryptjs'
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import bcrypt from 'bcryptjs';
+import { useNavigate } from 'react-router-dom';
+import { URL } from '../App';
 
 const ChangePassword = () => {
+  const navigate = useNavigate();
 
-
-  const navigate = useNavigate()
-
-  const userInfo = localStorage.getItem("userInfo")
-    ? JSON.parse(localStorage.getItem("userInfo"))
+  const userInfo = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
     : null;
 
-  console.log(userInfo)
-  const userOldPass = userInfo.password
-  console.log(userOldPass)
+  console.log(userInfo);
+  const userOldPass = userInfo.password;
+  console.log(userOldPass);
 
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [rNewPassword, setRNewPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [rNewPassword, setRNewPassword] = useState('');
 
-  const updateHandler = async(e) => {
-    e.preventDefault()
+  const updateHandler = async (e) => {
+    e.preventDefault();
 
-    async function compareIt(oldPassword){
+    async function compareIt(oldPassword) {
       const validPassword = await bcrypt.compare(oldPassword, userOldPass);
 
       //check old password is correct
       if (validPassword !== true) {
-        toast.error("The old password is not correct!");
+        toast.error('The old password is not correct!');
         return;
       }
 
       //if new password === retype new password
       if (newPassword === rNewPassword) {
         try {
-
-          const {data} = await axios.put("/api/users/update", {
+          const { data } = await axios.put(`${URL}/api/users/update`, {
             _id: userInfo._id,
             newPassword,
           });
 
-          localStorage.removeItem("userInfo", JSON.stringify(data));
-          toast.success("Password updated successfully!");
-          navigate("/login");
+          localStorage.removeItem('userInfo', JSON.stringify(data));
+          toast.success('Password updated successfully!');
+          navigate('/login');
         } catch (error) {
-          toast.error("Password not updated!");
+          toast.error('Password not updated!');
         }
       } else {
         toast.error("Password doesn't match!");
       }
     }
-    compareIt(oldPassword)
-  }
+    compareIt(oldPassword);
+  };
 
   return (
     <>

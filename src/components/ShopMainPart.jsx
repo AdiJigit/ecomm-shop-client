@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { URL } from '../App';
 import Empty from './Empty';
 import Search from './filterPartials/Search';
 import ShopFilter from './ShopFilter';
@@ -88,7 +89,7 @@ const ShopMainPart = () => {
   useEffect(() => {
     //fetch all product from db
     const fetchData = async () => {
-      const resultProducts = await axios.get('/api/products/all');
+      const resultProducts = await axios.get(`${URL}/api/products/all`);
 
       const resultProductsData = resultProducts.data;
 
@@ -101,17 +102,17 @@ const ShopMainPart = () => {
       setProducts(sortResultProductsData);
 
       //fetch all Category
-      const resultCategory = await axios.get('api/category/all');
+      const resultCategory = await axios.get(`${URL}/api/category/all`);
       // console.log(resultCategory.data)
       setCategory(resultCategory.data);
 
       //fetch all Rating
-      const resultRating = await axios.get('api/rating/all');
+      const resultRating = await axios.get(`${URL}/api/rating/all`);
       // console.log(resultRating.data)
       setRating(resultRating.data);
 
       //fetch all Subcategories
-      const resultSubcategory = await axios.get('/api/subcategory/all');
+      const resultSubcategory = await axios.get(`${URL}/api/subcategory/all`);
       // console.log(resultSubcategory.data)
       setSubCategory(resultSubcategory.data);
     };
